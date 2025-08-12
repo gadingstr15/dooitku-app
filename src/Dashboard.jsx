@@ -412,17 +412,15 @@ export default function Dashboard({ session }) {
         .eq("id", existingBudget.id);
       toast.success("Anggaran berhasil diperbarui!");
     } else {
-      await supabase
-        .from("budgets")
-        .insert([
-          {
-            user_id: session.user.id,
-            category_id: categoryId,
-            amount,
-            month: currentMonth,
-            year: currentYear,
-          },
-        ]);
+      await supabase.from("budgets").insert([
+        {
+          user_id: session.user.id,
+          category_id: categoryId,
+          amount,
+          month: currentMonth,
+          year: currentYear,
+        },
+      ]);
       toast.success("Anggaran berhasil dibuat!");
     }
     await loadAllDashboardData();

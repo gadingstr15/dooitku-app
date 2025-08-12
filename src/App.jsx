@@ -4,8 +4,8 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { supabase } from "./supabaseClient";
 
 // Impor semua halaman secara dinamis untuk code-splitting
-const Auth = lazy(() => import("./auth"));
-const Dashboard = lazy(() => import("./dashboard"));
+const Auth = lazy(() => import("./Auth"));
+const Dashboard = lazy(() => import("./Dashboard"));
 const PocketDetail = lazy(() => import("./PocketDetail"));
 const AddGeneralTransaction = lazy(() => import("./AddGeneralTransaction"));
 const Reports = lazy(() => import("./Reports"));
